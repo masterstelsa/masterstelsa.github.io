@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Пятнашки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="field" id="field">
+        <div class="modal" id="modal">Победа!</div>
+    </div>
+    <script src="script.js"></script>
+    <h1 id="timer"disabled class="pause">00:00:00</h1>
+    <button id="startBtn" class="yes">Старт</button>
+    <button id="pauseBtn" disabled class="yes">Пауза</button>
+    <script>
+        let timer = document.getElementById('timer');
+    let startBtn = document.getElementById('startBtn');
+    let pauseBtn = document.getElementById('pauseBtn');
+    let resetBtn = document.getElementById('resetBtn');
+    
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let interval;    
+    function updateTime() {
+      seconds++;
+      if (seconds === 60) {
+        minutes++;
+        seconds = 0;
+      }
+      if (minutes === 60) {
+        hours++;
+        minutes = 0;
+      }
+      timer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+   
+    
+    
+    
+    startBtn.addEventListener('click', () => {
+      interval = setInterval(updateTime, 1000);
+      startBtn.disabled = true;
+      pauseBtn.disabled = false;
+      resetBtn.disabled = false;
+    });
+    pauseBtn.addEventListener('click', () => {
+  clearInterval(interval);
+  startBtn.disabled = false;
+  pauseBtn.disabled = true;
+});
+    startBtn.click();
+    </script>
+</body>
+
+
+</html>
