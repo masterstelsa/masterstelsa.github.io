@@ -1,60 +1,482 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Пятнашки</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/bxslider.css">
+    <link rel="stylesheet" href="css/icon-font.min.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <title>Здраствуйте</title>
 </head>
 
 <body>
-    <div class="field" id="field">
-        <div class="modal" id="modal">Победа!</div>
-    </div>
-    <script src="script.js"></script>
-    <h1 id="timer"disabled class="pause">00:00:00</h1>
-    <button id="startBtn" class="yes">Старт</button>
-    <button id="pauseBtn" disabled class="yes">Пауза</button>
-    <script>
-        let timer = document.getElementById('timer');
-    let startBtn = document.getElementById('startBtn');
-    let pauseBtn = document.getElementById('pauseBtn');
-    let resetBtn = document.getElementById('resetBtn');
-    
-    let seconds = 0;
-    let minutes = 0;
-    let hours = 0;
-    let interval;    
-    function updateTime() {
-      seconds++;
-      if (seconds === 60) {
-        minutes++;
-        seconds = 0;
-      }
-      if (minutes === 60) {
-        hours++;
-        minutes = 0;
-      }
-      timer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-   
-    
-    
-    
-    startBtn.addEventListener('click', () => {
-      interval = setInterval(updateTime, 1000);
-      startBtn.disabled = true;
-      pauseBtn.disabled = false;
-      resetBtn.disabled = false;
-    });
-    pauseBtn.addEventListener('click', () => {
-  clearInterval(interval);
-  startBtn.disabled = false;
-  pauseBtn.disabled = true;
-});
-    startBtn.click();
-    </script>
-</body>
+    <div class="topheader">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <a href="#0">
+                        <img src="images/2123081.webp" alt="logo">
+                        <p>ВСЕ О КАПИБАРАХ</p>
+                    </a>
+                </div>
 
+                <div class="menu">
+                    <a class="primary-nav-trigger" href="#0">
+                        <span class="menu-icon"></span>
+                    </a>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <nav >
+        <ul class="primary-nav">
+            <li><a href="#banner">Главная</a></li>
+            <li><a href="#aboutus">О капибарах</a></li>
+            <li><a href="#somefutures">Купить капибар</a></li>
+            <li><a href="#ourworks">Моральная поддержка создателя сайта</a></li>
+            <li><a href="#wasserschweine">Мемы</a></li>
+            <li><a href="#team">Место с капибарами</a></li>
+            <li><a href="#money">Поддержать</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="banner" id="banner">
+            <div class="container">
+                <ul class="bxslider">
+                    <li>
+                        <h2>Капибары-наше все</h2>
+                        <p>Ни одной капибары не погибло</p>
+                    </li>
+                    <li>
+                        <h2>Капибары важны везде</h2>
+                        <p>Даже там где их нет</p>
+                    </li>
+                    <li>
+                        <h2>Надежность наша фишка</h2>
+                        <p>Ни одной упавшей капибары</p>
+                    </li>
+                </ul>
+                <!-- <div class="scrolldown">
+                    <a href="#about">
+                        <img src="images/mouse.png">
+                        <p>Листай дальше</p>
+                    </a>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="aboutus" id="aboutus">
+            <div class="head_white_content">
+                <h3>O КАПИБАРАХ</h3>
+                <span id="redline"></span>
+                <p> Данная информация о таком виде животных как капибара предоставлена в блоках с хорошо
+                    детализированными иконками</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <div class="adventage">
+                        <span class="lnr lnr-earth"></span>
+                        <h4>Место обитания</h4>
+                        <p>Капибары обитают преймущественно в южной америке,но такжеих можно встретить в зоопарках.Один
+                            из зоопарков с капибарами находится в москве на ВДНХ,данный зоопарк называется москвариум
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <div class="adventage">
+                        <span class="lnr lnr-paw"></span>
+                        <h4>Вид , размер</h4>
+                        <p>Капибары являются грызунами и делятся на малых и больших.Размер Капибары 60 см в длинну и 40
+                            см в высоту</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4">
+                    <div class="adventage">
+                        <span class="lnr lnr-smile"></span>
+                        <h4>Капибары-друзья</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- <section class="somefutures">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                        <div class="head_black_content">
+                            <h4>Мы в цифрах</h4>
+                            <span></span>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row numeral">
+                    <div class="col-md-3 col-xl-3 col-6">
+                        <span class="lnr lnr-smile"></span>
+                        <p>Число погибших капибар за сегодня</p>
+                        <h5>Sie sind unsterblich</h5>
+                    </div>
+
+
+
+                    <div class="col-md-3 col-xl-3 col-6">
+                        <span class="lnr lnr-laptop-phone"></span>
+                        <p>Число родившихся капибар</p>
+                        <h5>Es ist unkulkeleiber</h5>
+                    </div>
+
+
+
+                    <div class="col-md-3 col-xl-3 col-6">
+                        <span class="lnr lnr-screen"></span>
+                        <p>Капибары-скуфы с рождения</p>
+                        <h5>Ja</h5>
+                    </div>
+
+
+
+                    <div class="col-md-3 col-xl-3 col-6">
+                        <span class="lnr lnr-mustache"></span>
+                        <p>Auf Wiedesiene</p>
+                        <h5>Hallo</h5>
+
+
+                    </div>
+
+                </div>
+
+        </section> -->
+            <section class="somefutures" id="somefutures">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+                            <div class="head_black_content">
+                                <h4>Цены</h4>
+                                <span></span>
+                                <p class="ceni">Цены указаны на стандартный сайт и являются приблизительными</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                            <div class="price-content">
+                                <div class="price-content-head">
+                                    <h5>от 200</h5>
+                                    <h4>Брелок</h4>
+                                    <p>Однатраничный сайт</p>
+                                </div>
+                                <div class="price-content-body">
+                                    <p><span>8</span>Блоков</p>
+                                    <p><span>1</span>Товар или услуга</p>
+                                    <p><span>3</span>Правки</p>
+                                    <p><span>200+</span>Клиентов в месяцы</p>
+                                    <a href="#" class="order">Купить</a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                            <div class="price-content">
+                                <div class="price-content-head">
+                                    <h5>от 1000</h5>
+                                    <h4>Футболка</h4>
+                                    <p>Однатраничный сайт</p>
+                                </div>
+
+
+
+                                <div class="price-content-body">
+                                    <p><span>8</span>Блоков</p>
+                                    <p><span>1</span>Товар или услуга</p>
+                                    <p><span>3</span>Правки</p>
+                                    <p><span>200+</span>Клиентов в месяцы</p>
+                                    <a href="#" class="order">Купить</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                            <div class="price-content">
+                                <div class="price-content-head">
+                                    <h5>от 1500</h5>
+                                    <h4>игрушка</h4>
+                                    <p>Однатраничный сайт</p>
+                                </div>
+
+
+
+                                <div class="price-content-body">
+                                    <p><span>8</span>Блоков</p>
+                                    <p><span>1</span>Товар или услуга</p>
+                                    <p><span>3</span>Правки</p>
+                                    <p><span>200+</span>Клиентов в месяцы</p>
+                                    <a href="#" class="order">Купить</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                            <div class="price-content">
+                                <div class="price-content-head">
+                                    <h5>от 3000</h5>
+                                    <h4>игрушка</h4>
+                                    <p>Однатраничный сайт</p>
+                                </div>
+
+
+
+                                <div class="price-content-body">
+                                    <p><span>8</span>Блоков</p>
+                                    <p><span>1</span>Товар или услуга</p>
+                                    <p><span>3</span>Правки</p>
+                                    <p><span>200+</span>Клиентов в месяцы</p>
+                                    <a href="#" class="order">Купить</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            </section>
+            <section class="ourworks" id="ourworks">
+                <div class="head_white_content">
+                    <h3>КОМАНДА</h3>
+                    <span id="redline"></span>
+                    <p> Данная информация о таком виде животных как капибара предоставлена в блоках с хорошо
+                        детализированными иконками</p>
+                </div>
+
+                <div class="row">
+                    <ul class="bxslider_team">
+                        <li>
+                            <div class="row teamslider">
+                                <div class="col-md-4 col-xl-4 col-lg-4 col-4">
+                                    <div class="sinner1">
+                                        <img src="images/simage1.png" alt="">
+                                        <h4>Николай Голов</h4>
+                                        <p>director</p>
+                                        <a></a>
+                                        <a href="https://vk.com/id623855062"> <img src="images/icon-vk.png" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xl-8 col-lg-8 col-8">
+                                    <div class="sinner2">
+                                        <h1>Мои скилы</h1>
+                                        <p>Добрый</p>
+                                        <img src="images/stat.png" alt="">
+                                    </div>
+                                </div>
+
+                        </li>
+                        <li>
+                            <div class="row teamslider">
+                                <div class="col-md-4 col-xl-4 col-lg-4 col-4">
+                                    <div class="sinner1">
+                                        <img src="images/simage1.png" alt="">
+                                        <h4>Боккоев Константин</h4>
+                                        <p>goodman</p>
+                                        <a></a>
+                                        <a href="https://vk.com/id753410109"> <img src="images/icon-vk.png" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xl-8 col-lg-8 col-8">
+                                    <div class="sinner2">
+                                        <h1>Мои скилы</h1>
+                                        <p>Добрый</p>
+                                        <img src="images/stat.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                </div>
+                </li>
+                </ul>
+                </div>
+            </section>
+
+            <section class="team" id="team">
+                <div class="head_white_content">
+                    <h3>Смешные капибары</h3>
+                    <p> Данная информация о таком виде животных как капибара предоставлена в блоках с хорошо
+                        детализированными иконками</p>
+                    <div class="row">
+                        <div class="col-md-12 col-xl-12 col-lg-12 col-12">
+                            <div class="innerwidth"></div>
+                            <!-- <div class="flexslider"> -->
+                            <ul class="slides">
+                                <li>
+                                    <img src="images/FIt8SjtjSsM.jpg" alt="" width="250px" height="250px">
+                                </li>
+                                <!-- <li>
+                                    <img src="images/capebare.jpg" alt="" width = "200px" height="250px">
+                                </li>
+                                <li>
+                                    <img src="images/ecapi.webp" alt="" width = "200px" height="250px">
+                                </li>
+                                <li>
+                                    <img src="images/okipullup.jpg" alt="" width = "200px" height="250px">
+                                </li>
+                                <li>
+                                    <img src="images/cipibiri.jpg" alt="" width = "200px" height="250px">
+                                </li>
+                                <li>
+                                    <img src="images/cabe.jpg" alt="" width = "200px" height="250px">
+                                </li> -->
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section class="wasserschweine" id="wasserschweine">
+                <div class="container">
+                    <div class="row">
+                        <div class="head_white_content">
+                            <h3>Memes with capybara</h3>
+                            <span></span>
+                            <p>You can see memes with capybara in this section</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix workportfolio">
+                    <ul id="filters" class="clearfix">
+                        <li><span class="filter active" data-filter="king emo cool dog"> Все мемы</span></li>
+                        <li><span class="filter" data-filter="king"> Король капибар</span></li>
+                        <li><span class="filter" data-filter="emo"> Emo капибар</span></li>
+                        <li><span class="filter" data-filter="cool"> Крутой капибар</span></li>
+                        <li><span class="filter" data-filter="dog"> Капибар с собакой</span></li>
+
+                    </ul>
+                    <div class="portfoliolist">
+                        <div class="portfolio king" data-cat="king">
+                            <div class="portfolio-wrapper">
+                                <img src="images/mrjopa.jpg" alt="">
+                                <div class="imgDisc2">
+                                    <h1>Король</h1>
+                                    <p>Описание </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio emo" data-cat="emo">
+                            <div class="portfolio-wrapper">
+                                <img src="images/emo.webp" alt="">
+                                <div class="imgDisc2">
+                                    <h1> Emo</h1>
+                                    <p>Описание </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio cool" data-cat="cool">
+                            <div class="portfolio-wrapper">
+                                <img src="images/cool.jpg" alt="">
+                                <div class="imgDisc2">
+                                    <h1>Крутой</h1>
+                                    <p>Описание </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio dog" data-cat="dog">
+                            <div class="portfolio-wrapper">
+                                <img src="images/dog.jpg" alt="">
+                                <div class="imgDisc2">
+                                    <h1>Собака</h1>
+                                    <p>Описание </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="money" id="money">
+                <div class="head_white_content">
+                    <h3>Поддержать</h3>
+                    <span id="redline"></span>
+                    <p> Поддержите создателя сайта</p>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 col-6 textinput">
+                                <p>Имя <span>*</span></p>
+                                <input type="text" id="name">
+                            </div>
+                            <div class="col-md-6 col-6 textinput">
+                                <p>Номер карточки <span>*</span></p>
+                                <input type="text" id="name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12 textmsg">
+                                <p>Комментарий</p>
+                                <textarea id="msg" cols="30" rows="10"></textarea>
+                                <input type="button" class="submit" value="Отправить запрос">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="team" id="team">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                        <div class="head_black_content accordion">
+                            <h4>МЕСТО C КАПИБАРАМИ <span></span></h4>
+                        </div>
+                        <div class="content">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4481.565625578804!2d37.61598214815514!3d55.83172895553682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b5367813945881%3A0x96868c02b343cf39!2z0JzQvtGB0LrQstCw0YDQuNGD0Lw!5e0!3m2!1sru!2sru!4v1743326259764!5m2!1sru!2sru"
+                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+
+            </section>
+            <section class="team">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                        <div class="head_black_content accordion">
+                            <img src="images/2123081.webp" alt="">
+                            <h4 class="crack">ВСЕ О КАПИБАРАХ </h4>
+
+                        </div>
+                    </div>
+
+            </section>
+
+
+
+
+
+
+    </main>
+
+    <script src="script/jquery-2.1.1.js"></script>
+    <script src="script/jquery.accordion.js"></script>
+    <script src="script/jquery.mixitup.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/bxslider.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/jquery.flexslider.js"></script>
+</body>
 
 </html>
