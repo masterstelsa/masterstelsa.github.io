@@ -84,4 +84,7 @@ $(document).ready(function () {
     }
     this.previousTop = currentTop;
   });
+  $(window).load(function(){
+    $(".preload").delay(5000).fadeOut("slow");
+  })
 
